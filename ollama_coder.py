@@ -26,22 +26,24 @@ def below_zero(operations: List[int]) -> bool:
     return False
 """
 
+NUM_EPOCHS = 5
 # 1. Define the model and the prompt
 MODELS_TO_TEST = [
+    "mistral:7b-instruct-v0.3",
     "llama3.1:8b-instruct",
-    "qwen2.5-coder:7b-base",
-    "deepseek-coder:6.7b-instruct"
+    "deepseek-coder:6.7b-instruct",
+
 ]
 
 # Standard Ollama tags for quantization: f16 is used for unquantized float16
 QUANTIZATION_LEVELS = ["fp16", "q8_0", "q4_0"]
-NUM_EPOCHS = 5
+
 
 
 complete_prompt_text = f"""
-Please act as an expert Python software engineer. Given the function below:
+Please act as an expert Python software engineer. Given the python function below:
 {function_code}
-I would appreciate it if you could generate a complete and professional Google-style or Numpy-style docstring. 
+I would appreciate it if you could generate a complete and professional Google-style docstring. 
 The docstring should not include any extra commentary, strictly limited to include the docstring itself and the original function code. 
 CODE ONLY. Use standard Python indentation. Thank you. 
 Do not add explanations, notes, or text outside of the code. 
@@ -50,14 +52,15 @@ Return only the function code with its docstring, without markdown fences or ext
 
 
 concise_prompt_text = f"""
-Generate Numpy or Google-style docstring for the following Python function.
+Generate COMPLETE GOOGLE style docstring for the following Python function:
 {function_code}
-strictly limited output the docstring and function code using standard indentation. CODE ONLY. 
-Do not include explanations, notes, or text outside the code. 
+Output the docstring with the function code. Do not include explanations, notes, or text outside the code. 
 Return only the function code with its docstring, without markdown fences or extra text.
 """
 
-ultra_concise_prompt_text = f"""Add Numpy or Google style docstring to {function_code}. Output function code only, no text."""
+ultra_concise_prompt_text = f"""Add GOOGLE style docstring to function:
+{function_code}
+Output code only, no text."""
 
 
 PROMPTS = {
@@ -70,9 +73,9 @@ PROMPTS = {
 OLLAMA_ENDPOINT = os.getenv("OLLAMA_BASE_URL", "http://192.168.149.1:11434/api/generate")
 
 MODEL_HF_MAP = {
-    "qwen2.5-coder:7b-base": "Qwen/Qwen2.5-Coder-7B-Instruct",
     "llama3.1:8b-instruct": "meta-llama/Meta-Llama-3.1-8B-Instruct",
-    "deepseek-coder:6.7b-instruct": "deepseek-ai/deepseek-coder-6.7b-base"
+    "deepseek-coder:6.7b-instruct": "deepseek-ai/deepseek-coder-6.7b-base",
+    "mistral:7b-instruct-v0.3":"mistralai/Mistral-7B-Instruct-v0.3"
 }
 
 
@@ -111,11 +114,11 @@ def check_code_accuracy(generated_text: str) -> str:
 
     # 3) Collect docstrings (module + any function/class)
     docs = []
-    if (mod_doc := ast.get_docstring(mod)):
+    if mod_doc := ast.get_docstring(mod):
         docs.append(mod_doc)
     for node in ast.walk(mod):
         if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
-            if (d := ast.get_docstring(node)):
+            if d := ast.get_docstring(node):
                 docs.append(d)
 
     if not docs:
@@ -138,8 +141,8 @@ def generate_with_ollama(
     model_name: str,
     prompt_text: str,
     tokenizer: PreTrainedTokenizer,
-    temperature: float = 0.3,
-    max_tokens: int = 512,
+    temperature: float = 1.0,
+    max_tokens: int = 1024,
     json_format: bool = False,
     seed: int = None,
     stop: list = None
@@ -161,15 +164,20 @@ def generate_with_ollama(
         dict: A dictionary containing the generated text and performance metrics.
     """
     t_in = calculate_tokens(prompt_text, tokenizer)
-
+    print(prompt_text)
     # --- Payload construction inspired by your example ---
     payload = {
         "model": model_name,
-        "prompt": prompt_text,
-        "stream": False,
+        "prompt": prompt_text,  # CLI uses the TEMPLATE with plain prompt by default
+        "stream": False,  # one-shot response
+        "keep_alive": 0,  # don't retain chat context (matches one-off CLI runs)
         "options": {
-            "temperature": temperature,
-            "num_predict": max_tokens,
+            "raw": False,
+            "num_predict": int(max_tokens),
+            "temperature": float(temperature),
+            "top_p": 0.9,
+            "top_k": 40,
+
         },
     }
     if json_format:
@@ -186,7 +194,7 @@ def generate_with_ollama(
     result = "N/A"
     try:
         start_time = time.perf_counter()
-        response = requests.post(OLLAMA_ENDPOINT, data=json.dumps(payload), timeout=300)
+        response = requests.post(OLLAMA_ENDPOINT, json=payload, timeout=300)
         response.raise_for_status()
         end_time = time.perf_counter()
         generated_text = response.json().get('response', '').strip()
@@ -196,7 +204,7 @@ def generate_with_ollama(
 
     except requests.exceptions.RequestException as e:
         print(f"  An error occurred for model {model_name}: {e}")
-
+    print(generated_text)
     return {
         "generated_text": generated_text,
         "T_in": t_in,
