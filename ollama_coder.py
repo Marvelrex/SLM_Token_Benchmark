@@ -1,3 +1,5 @@
+import random
+
 import requests
 import json
 import time
@@ -52,13 +54,13 @@ Return only the function code with its docstring, without markdown fences or ext
 
 
 concise_prompt_text = f"""
-Generate COMPLETE GOOGLE style docstring for the following Python function:
+Generate COMPLETE Google-style docstring for the following Python function:
 {function_code}
 Output the docstring with the function code. Do not include explanations, notes, or text outside the code. 
-Return only the function code with its docstring, without markdown fences or extra text.
+Return only the function code with its docstring, without extra text.
 """
 
-ultra_concise_prompt_text = f"""Add GOOGLE style docstring to function:
+ultra_concise_prompt_text = f"""Add Google-style docstring to function:
 {function_code}
 Output code only, no text."""
 
@@ -163,6 +165,9 @@ def generate_with_ollama(
     Returns:
         dict: A dictionary containing the generated text and performance metrics.
     """
+
+    if seed is None:
+        seed = random.randint(1, 10_000_000)
     t_in = calculate_tokens(prompt_text, tokenizer)
     print(prompt_text)
     # --- Payload construction inspired by your example ---
@@ -267,7 +272,6 @@ if __name__ == "__main__":
                         model_name=full_model_name,
                         prompt_text=prompt_template,
                         tokenizer=tokenizer,
-                        seed=42  # Using a fixed seed for determinism
                     )
 
                     # Store results along with all experimental variables
