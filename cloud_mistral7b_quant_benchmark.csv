@@ -1,0 +1,847 @@
+Model,Quantization,Prompt,Epoch,Output,T_in,T_out,T_total,InferenceTime,Accuracy,Hardware
+Mistral-7B-Instruct-v0.3,unquantized,complete_prompt_text,1,"```python
+from typing import List
+
+""""""
+Given a list of deposit and withdrawal operations on a bank account that starts with zero balance,
+determine if at any point the balance of the account falls below zero. If so, return True.
+
+Parameters:
+    operations (List[int]): A list of integers representing the bank operations (deposits or withdrawals)
+
+Returns:
+    bool: True if the account balance falls below zero at any point during the operations, False otherwise.
+
+Example:
+    below_zero([5, -3, 10, -6])  # Returns True, since the balance is -1 at some point in the operations.
+""""""
+def below_zero(operations: List[int]) -> bool:
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",241,202,443,78.28832535600031,True,Cloud
+Mistral-7B-Instruct-v0.3,unquantized,complete_prompt_text,2,"```python
+""""""
+Detects if the balance of a bank account falls below zero at any point, given a list of deposit and withdrawal operations.
+
+This function simulates the balancing of a bank account given a list of deposit (positive) and withdrawal (negative) operations.
+It starts with a zero balance and iterates through the operations, updating the balance accordingly.
+If at any point the balance falls below zero, the function returns True.
+If the balance remains non-negative throughout all operations, the function returns False.
+
+Args:
+    operations (List[int]): A list of integer values representing deposit (positive) and withdrawal (negative) operations on the bank account.
+
+Returns:
+    bool: True if the balance falls below zero at any point during the operations, False otherwise.
+
+Example:
+    below_zero([5, -3, 8, -15, 2]) -> True
+
+Example:
+    below_zero([1000, 200, 300, 400]) -> False
+""""""
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",241,291,532,99.95661772499989,True,Cloud
+Mistral-7B-Instruct-v0.3,unquantized,complete_prompt_text,3,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Given a list of deposit and withdrawal operations on a bank account with an initial zero balance,
+    this function checks if the balance of the account ever falls below zero at any point during the operations.
+    If so, it returns True, otherwise returns False.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",241,121,362,41.37820709600055,True,Cloud
+Mistral-7B-Instruct-v0.3,unquantized,complete_prompt_text,4,"```python
+from typing import List
+
+""""""
+Determines if the balance of a bank account falls below zero at any point given a list of deposit and withdrawal operations.
+
+Arguments:
+    operations (List[int]): A list of integer values representing deposit (+) or withdrawal (-) operations on the account.
+        A positive value represents a deposit, while a negative value represents a withdrawal.
+
+Returns:
+    bool: True if the balance falls below zero at any point during the given operations; otherwise, False.
+""""""
+def below_zero(operations: List[int]) -> bool:
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",241,165,406,56.38060166200012,True,Cloud
+Mistral-7B-Instruct-v0.3,unquantized,complete_prompt_text,5,"```python
+from typing import List
+
+'''
+Detects if the given list of deposit and withdrawal operations cause the balance of a bank account to fall below zero at any point.
+
+Args:
+    operations (List[int]): A list of operations where each element represents a deposit or a withdrawal from the bank account.
+
+Returns:
+    bool: True if, at any point, the balance of the account falls below zero, otherwise False.
+'''
+def below_zero(operations: List[int]) -> bool:
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",241,150,391,51.17319652199967,True,Cloud
+Mistral-7B-Instruct-v0.3,unquantized,concise_prompt_text,1,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Determines if any point the balance of a bank account falls below zero.
+
+    Args:
+        operations (List[int]): List of deposit and withdrawal operations on the bank account.
+
+    Returns:
+        bool: True if the balance ever falls below zero; False otherwise.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",184,130,314,44.40270131299985,True,Cloud
+Mistral-7B-Instruct-v0.3,unquantized,concise_prompt_text,2,"```python
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Given a list of deposit and withdrawal operations on a bank account that starts with zero balance,
+    detect if at any point the balance of the account falls below zero.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",184,96,280,33.140226084999995,True,Cloud
+Mistral-7B-Instruct-v0.3,unquantized,concise_prompt_text,3,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Given a list of deposit and withdrawal operations on a bank account that starts with zero balance,
+    detect if at any point the balance of the account falls below zero.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",184,102,286,34.793780568999864,True,Cloud
+Mistral-7B-Instruct-v0.3,unquantized,concise_prompt_text,4,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Detect if at any point the balance of account falls below zero
+    given a list of deposit and withdrawal operations.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",184,91,275,31.14795166499971,True,Cloud
+Mistral-7B-Instruct-v0.3,unquantized,concise_prompt_text,5,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Given a list of deposit and withdrawal operations, detect if the account balance
+    falls below zero at any point.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",184,91,275,31.20512667499952,True,Cloud
+Mistral-7B-Instruct-v0.3,unquantized,ultra_concise_prompt_text,1,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""Detects if the balance of a bank account, starting with zero balance
+    and undergoing a series of deposit and withdrawal operations, ever falls below zero.
+
+    Args:
+        operations (List[int]): A list of integers representing deposit or withdrawal operations
+
+    Returns:
+        bool: True if the balance ever falls below zero, False otherwise
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",139,143,282,48.48846828200021,True,Cloud
+Mistral-7B-Instruct-v0.3,unquantized,ultra_concise_prompt_text,2,"```python
+def below_zero(operations: List[int]) -> bool:
+   r"""""",
+    Given a list of deposit and withdrawal operations on a bank account that starts with zero balance.
+    Detect if at any point the balance of the account falls below zero, and at that point the function should return True.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",139,108,247,36.68194601200048,True,Cloud
+Mistral-7B-Instruct-v0.3,unquantized,ultra_concise_prompt_text,3,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""Detect if balance of account falls below zero at any point during given operations.""""""
+
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",139,80,219,27.161686421000013,True,Cloud
+Mistral-7B-Instruct-v0.3,unquantized,ultra_concise_prompt_text,4,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Detect if the balance of a bank account falls below zero given
+    a list of deposit and withdrawal operations.
+
+    Returns:
+        bool: True if balance falls below zero, False otherwise.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",139,109,248,37.06255010800032,True,Cloud
+Mistral-7B-Instruct-v0.3,unquantized,ultra_concise_prompt_text,5,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Detects if the account balance falls below zero at any point
+    after performing a series of deposit and withdrawal operations.
+
+    Args:
+        operations (List[int]): A list of deposit and withdrawal operations
+
+    Returns:
+        bool: True if the balance falls below zero at any point, False otherwise
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",139,135,274,45.96620907400029,True,Cloud
+Mistral-7B-Instruct-v0.3,8bit,complete_prompt_text,1,"```python
+from typing import List
+
+""""""
+Given a list of deposit and withdrawal operations on a bank account that starts with zero balance,
+determine if at any point the balance of the account falls below zero. If so, return True.
+
+Parameters:
+    operations (List[int]): A list of integers representing the bank operations (deposits or withdrawals)
+
+Returns:
+    bool: True if the account balance falls below zero during the operation sequence, False otherwise.
+""""""
+
+def below_zero(operations: List[int]):
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",241,159,400,29.57608487699963,True,Cloud
+Mistral-7B-Instruct-v0.3,8bit,complete_prompt_text,2,"```python
+""""""
+Detects if the balance of a bank account falls below zero at any point during a series of deposit and withdrawal operations.
+
+The account starts with zero balance.
+
+Arguments:
+    operations (List[int]): A list of deposit and withdrawal operations to be applied on the bank account.
+
+Returns:
+    bool:True if the balance of the account falls below zero at any point during the operations, False otherwise.
+
+Examples:
+    >>> below_zero([10, 5, -20, 25])
+    True
+    >>> below_zero([200, 500, -700, 800])
+    False
+""""""
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",241,213,454,39.20742133400017,True,Cloud
+Mistral-7B-Instruct-v0.3,8bit,complete_prompt_text,3,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Given a list of deposit and withdrawal operations on a bank account with an initial zero balance,
+    this function checks if the balance of the account ever falls below zero at any point during the operations.
+    If so, it returns True, otherwise returns False.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",241,121,362,22.6424565920006,True,Cloud
+Mistral-7B-Instruct-v0.3,8bit,complete_prompt_text,4,"```python
+""""""
+Determines if the balance of a bank account falls below zero at any point
+given a list of deposit and withdrawal operations on the account, which starts
+with a zero balance.
+
+This function iterates through each operation, accumulating the balance and
+returning True as soon as the balance falls below zero. If the balance remains
+non-negative throughout all operations, the function returns False.
+
+Arguments:
+    operations (List[int]): A list of deposit (positive) and withdrawal (negative)
+                            operations to be applied on the account.
+
+Returns:
+    bool: True if the account balance falls below zero at any point, False otherwise.
+
+Example:
+    >>> below_zero([10, 20, -40, 100])
+    True
+""""""
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",241,238,479,44.509236754000085,True,Cloud
+Mistral-7B-Instruct-v0.3,8bit,complete_prompt_text,5,"```python
+from typing import List
+
+'''
+Detects if the given list of deposit and withdrawal operations cause the balance of a bank account to fall below zero.
+
+Parameters:
+    operations (List[int]): A list of deposit (positive integers) and withdrawal (negative integers) operations.
+
+Returns:
+    bool: True if at any point during the execution of the operations the account balance falls below zero, otherwise False.
+'''
+def below_zero(operations: List[int]) -> bool:
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",241,150,391,27.80552757999976,True,Cloud
+Mistral-7B-Instruct-v0.3,8bit,concise_prompt_text,1,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Determines if any point the balance of a bank account starts with zero and falls below zero
+    given a list of deposit and withdrawal operations.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",184,98,282,18.485671648999414,True,Cloud
+Mistral-7B-Instruct-v0.3,8bit,concise_prompt_text,2,"```python
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Given a list of deposit and withdrawal operations on a bank account that starts with zero balance,
+    detect if at any point the balance of the account falls below zero.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",184,96,280,17.616900775999966,True,Cloud
+Mistral-7B-Instruct-v0.3,8bit,concise_prompt_text,3,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Given a list of deposit and withdrawal operations on a bank account that starts with zero balance,
+    detect if at any point the balance of the account falls below zero.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",184,102,286,19.175178393999886,True,Cloud
+Mistral-7B-Instruct-v0.3,8bit,concise_prompt_text,4,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Detect if at any point the balance of account falls below zero
+    given a list of deposit and withdrawal operations.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",184,91,275,16.78946544000064,True,Cloud
+Mistral-7B-Instruct-v0.3,8bit,concise_prompt_text,5,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Detects if the account balance falls below zero at any point
+    given a list of deposit and withdrawal operations on a bank account.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",184,95,279,17.980556957999397,True,Cloud
+Mistral-7B-Instruct-v0.3,8bit,ultra_concise_prompt_text,1,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""Detects if the balance of a bank account, starting with zero balance,
+    falls below zero during a sequence of deposit and withdrawal operations.
+
+    Returns:
+        True if the balance ever falls below zero, False otherwise.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",139,115,254,21.111054822999904,True,Cloud
+Mistral-7B-Instruct-v0.3,8bit,ultra_concise_prompt_text,2,"```python
+def below_zero(operations: List[int]) -> bool:
+   r"""""",
+    Given a list of deposit and withdrawal operations on a bank account that starts with zero balance,
+    determine if the balance ever falls below zero at any point. If it does, the function should return True.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",139,106,245,19.972301114999937,True,Cloud
+Mistral-7B-Instruct-v0.3,8bit,ultra_concise_prompt_text,3,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""Detect if balance ever falls below zero for a series of bank operations.""""""
+
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",139,79,218,14.829055954000069,True,Cloud
+Mistral-7B-Instruct-v0.3,8bit,ultra_concise_prompt_text,4,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Detect if the balance of a bank account falls below zero given
+    a list of deposit and withdrawal operations.
+
+    Returns:
+        bool: True if balance falls below zero, False otherwise.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",139,109,248,20.466953774000103,True,Cloud
+Mistral-7B-Instruct-v0.3,8bit,ultra_concise_prompt_text,5,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Detect if at any point the balance of an account falls below zero given
+    a list of deposit and withdrawal operations on a bank account that starts
+    with zero balance.
+
+    Returns:
+        True if account balance falls below zero at any point, False otherwise.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",139,124,263,23.09972556199955,True,Cloud
+Mistral-7B-Instruct-v0.3,4bit,complete_prompt_text,1,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Determines if any point in the given sequence of deposit and withdrawal
+    bank account operations the balance falls below zero.
+
+    Args:
+        operations (List[int]): A sequence of deposit and withdrawal operations
+                                that changes the bank account balance.
+                                Each operation is an integer, representing a deposit
+                                or withdrawal amount. A positive (negative)
+                                value corresponds to a deposit (withdrawal) from
+                                the account.
+
+    Returns:
+        bool: True if the balance falls below zero at any point during the
+              sequence of operations, False otherwise.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",241,203,444,15.099596086999554,True,Cloud
+Mistral-7B-Instruct-v0.3,4bit,complete_prompt_text,2,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Checks if a list of deposit and withdrawal operations
+    on a bank account causes the balance to fall below zero at any point.
+
+    Args:
+        operations (List[int]): A list of integers representing deposit or withdrawal operations.
+
+    Returns:
+        bool: True if the balance falls below zero at any point, False otherwise.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",241,143,384,10.847880262999752,True,Cloud
+Mistral-7B-Instruct-v0.3,4bit,complete_prompt_text,3,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Given a list of deposit and withdrawal operations on a bank account that starts with zero balance,
+    this function checks if at any point the balance of the account falls below zero.
+
+    Parameters:
+    operations (List[int]): A list of deposit and withdrawal operations as integers.
+
+    Returns:
+    bool: Returns True if the balance of the account falls below zero at any point, False Otherwise.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",241,156,397,11.98145956099961,True,Cloud
+Mistral-7B-Instruct-v0.3,4bit,complete_prompt_text,4,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Detects if the balance of a bank account with zero initial balance ever falls below zero
+    by iterating through the list of deposit and withdrawal operations.
+
+    Parameters:
+    operations (List[int]): A list of deposit and withdrawal operations as integer values.
+
+    Returns:
+    bool: True if the account balance ever falls below zero at any point, False otherwise.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",241,149,390,11.399707821999982,True,Cloud
+Mistral-7B-Instruct-v0.3,4bit,complete_prompt_text,5,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Detects if the account balance falls below zero at any point
+    given a list of deposit and withdrawal operations on a bank account
+    that starts with zero balance.
+
+    Args:
+    operations (List[int]): A list of deposit and withdrawal operations.
+
+    Returns:
+    bool: True if at any point the balance of the account falls below zero,
+          False otherwise.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```
+
+This code represents the function `below_zero` which takes a list of integers as an argument, and returns `True` if the total sum of the numbers in the list falls below zero at any point during the calculation, and `False` otherwise.",241,207,448,15.459266178999314,True,Cloud
+Mistral-7B-Instruct-v0.3,4bit,concise_prompt_text,1,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Determines if any point the balance of a bank account starts with zero and undergoes the operations
+    falls below zero.
+
+    :param operations: List of deposit and withdrawal operations.
+
+    :return: True if the balance falls below zero, False otherwise.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",184,126,310,9.672039074999702,True,Cloud
+Mistral-7B-Instruct-v0.3,4bit,concise_prompt_text,2,"```python
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Given a list of deposit and withdrawal operations on a bank account that starts with zero balance,
+    detect if at any point the balance of the account falls below zero.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",184,96,280,6.9368208599989885,True,Cloud
+Mistral-7B-Instruct-v0.3,4bit,concise_prompt_text,3,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Given a list of deposit and withdrawal operations on a bank account
+    that starts with zero balance, detect if at any point the balance of
+    the account falls below zero.
+
+    Parameters:
+    operations (List[int]): A list of deposit and withdrawal operations
+        on the bank account.
+
+    Returns:
+    bool: True if at any point the balance of the account falls below zero;
+          False otherwise.
+
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",184,161,345,12.110825942001611,True,Cloud
+Mistral-7B-Instruct-v0.3,4bit,concise_prompt_text,4,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Detect if at any point the balance of account falls below zero.
+
+    Parameters:
+    operations (List[int]): A list of deposit and withdrawal operations
+                            on a bank account that starts with zero balance.
+
+    Returns:
+    bool: Returns True if at any point the balance falls below zero,
+          and False otherwise.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",184,142,326,10.74146462600038,True,Cloud
+Mistral-7B-Instruct-v0.3,4bit,concise_prompt_text,5,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Given a list of deposit and withdrawal operations on a bank account that starts
+    with zero balance, detect if at any point the balance of the account falls below zero.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",184,102,286,7.979308873000264,True,Cloud
+Mistral-7B-Instruct-v0.3,4bit,ultra_concise_prompt_text,1,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""Check if the bank account balance falls below zero at any point.
+
+    The bank account starts with zero balance. This function accumulates the
+    balance of deposits and withdrawals and checks if it falls below zero.
+
+    Args:
+        operations (List[int]): a list containing deposit and withdrawal operations
+
+    Returns:
+        True if the account balance falls below zero at any point, False otherwise
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",139,154,293,11.533001290001266,True,Cloud
+Mistral-7B-Instruct-v0.3,4bit,ultra_concise_prompt_text,2,"```python
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Given a list of deposit and withdrawal operations on a bank account that starts with zero balance,
+    detect if at any point the balance of the account falls below zero.
+
+    Returns:
+        True if a negative balance is reached, False otherwise.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",139,114,253,8.724578748999193,True,Cloud
+Mistral-7B-Instruct-v0.3,4bit,ultra_concise_prompt_text,3,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""Detect if account balance ever falls below zero given a list of deposit and withdrawal operations.""""""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",139,81,220,5.941793223000786,True,Cloud
+Mistral-7B-Instruct-v0.3,4bit,ultra_concise_prompt_text,4,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Detect if the balance of a bank account falls below zero at any point.
+
+    Args:
+        operations (List[int]): A list of deposit and withdrawal operations that
+                                affect the account balance.
+
+    Returns:
+        True if the account balance ever falls below zero, False otherwise.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+```",139,134,273,10.220090216000244,True,Cloud
+Mistral-7B-Instruct-v0.3,4bit,ultra_concise_prompt_text,5,"```python
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Determine if the account balance ever falls below zero given a list of
+    operations, where each operation is either a deposit or a withdrawal.
+
+    :param operations: List of deposit and withdrawal operations.
+    :type operations: List[int]
+
+    :return: True if the account balance ever falls below zero, False otherwise.
+    :rtype: bool
+    """"""
+    balance = 0
+    for operation in operations:
+        balance += operation
+        if balance < 0:
+            return True
+    return False
+```",139,147,286,11.081166304000362,True,Cloud
