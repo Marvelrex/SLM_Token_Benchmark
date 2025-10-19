@@ -1,0 +1,253 @@
+run_id,prompt,output,accuracy,inference_time_s,emissions_kg,model_size_mb
+1,"
+Please act as an expert Python software engineer. Given the python function below:
+
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    You're given a list of deposit and withdrawal operations
+    on a bank account that starts with zero balance. Your task is to
+    detect if at any point the balance of account falls below zero,
+    and at that point function should return True.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+
+I would appreciate it if you could generate a complete and professional Google-style docstring.
+The docstring should not include any extra commentary, strictly limited to include the docstring itself and the original function code.
+CODE ONLY. Use standard Python indentation. Thank you.
+Do not add explanations, notes, or text outside of the code.
+Return only the function code with its docstring, without markdown fences or extra text before or after.
+","from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    You're given a list of deposit and withdrawal operations
+    on a bank account that starts with zero balance. Your task is to
+    detect if at any point the balance of account falls below zero,
+    and at that point function should return True.
+
+    Args:
+        operations (List[int]): A list of deposit and withdrawal operations.
+            Positive numbers represent deposits, while negative numbers represent withdrawals.
+
+    Returns:
+        bool: True if the balance falls below zero at any point, False otherwise.
+
+    Examples:
+        >>> below_zero([1, -2, 3, -4])
+        False
+        >>> below_zero([-1, 2, -3])
+        True
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+",N/A,4.0467800360002,7.629520639021567e-05,2357.190463066101
+2,"
+Please act as an expert Python software engineer. Given the python function below:
+
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    You're given a list of deposit and withdrawal operations
+    on a bank account that starts with zero balance. Your task is to
+    detect if at any point the balance of account falls below zero,
+    and at that point function should return True.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+
+I would appreciate it if you could generate a complete and professional Google-style docstring.
+The docstring should not include any extra commentary, strictly limited to include the docstring itself and the original function code.
+CODE ONLY. Use standard Python indentation. Thank you.
+Do not add explanations, notes, or text outside of the code.
+Return only the function code with its docstring, without markdown fences or extra text before or after.
+","from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Detects if at any point the balance of account falls below zero.
+
+    Args:
+        operations (List[int]): A list of deposit and withdrawal operations
+            on a bank account that starts with zero balance.
+
+    Returns:
+        bool: True if the balance falls below zero at any point, False otherwise.
+
+    Examples:
+        >>> below_zero([1, -2, 3, -4])
+        False
+        >>> below_zero([1, 2, 3, 4])
+        True
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+",N/A,3.1759370010004204,5.863265916326216e-05,2357.190463066101
+3,"
+Please act as an expert Python software engineer. Given the python function below:
+
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    You're given a list of deposit and withdrawal operations
+    on a bank account that starts with zero balance. Your task is to
+    detect if at any point the balance of account falls below zero,
+    and at that point function should return True.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+
+I would appreciate it if you could generate a complete and professional Google-style docstring.
+The docstring should not include any extra commentary, strictly limited to include the docstring itself and the original function code.
+CODE ONLY. Use standard Python indentation. Thank you.
+Do not add explanations, notes, or text outside of the code.
+Return only the function code with its docstring, without markdown fences or extra text before or after.
+","from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Detects if the balance of a bank account falls below zero.
+
+    Args:
+        operations (List[int]): A list of deposit and withdrawal operations.
+
+    Returns:
+        bool: True if the balance falls below zero at any point, False otherwise.
+
+    Examples:
+        >>> below_zero([1, -2, 3, -4])
+        True
+        >>> below_zero([-1, 1, -2, 2])
+        False
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+",N/A,2.8509376929996506,5.372870859937812e-05,2357.190463066101
+4,"
+Please act as an expert Python software engineer. Given the python function below:
+
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    You're given a list of deposit and withdrawal operations
+    on a bank account that starts with zero balance. Your task is to
+    detect if at any point the balance of account falls below zero,
+    and at that point function should return True.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+
+I would appreciate it if you could generate a complete and professional Google-style docstring.
+The docstring should not include any extra commentary, strictly limited to include the docstring itself and the original function code.
+CODE ONLY. Use standard Python indentation. Thank you.
+Do not add explanations, notes, or text outside of the code.
+Return only the function code with its docstring, without markdown fences or extra text before or after.
+","from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Detects if at any point the balance of account falls below zero.
+
+    Args:
+        operations (List[int]): A list of deposit and withdrawal operations
+            on a bank account that starts with zero balance.
+
+    Returns:
+        bool: True if at any point the balance of account falls below zero,
+            False otherwise.
+
+    Examples:
+        >>> below_zero([1, -2, 3, -4])
+        True
+        >>> below_zero([-1, -2, -3])
+        True
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+",N/A,3.223563961000764,6.0638780914435064e-05,2357.190463066101
+5,"
+Please act as an expert Python software engineer. Given the python function below:
+
+from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    You're given a list of deposit and withdrawal operations
+    on a bank account that starts with zero balance. Your task is to
+    detect if at any point the balance of account falls below zero,
+    and at that point function should return True.
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+
+I would appreciate it if you could generate a complete and professional Google-style docstring.
+The docstring should not include any extra commentary, strictly limited to include the docstring itself and the original function code.
+CODE ONLY. Use standard Python indentation. Thank you.
+Do not add explanations, notes, or text outside of the code.
+Return only the function code with its docstring, without markdown fences or extra text before or after.
+","from typing import List
+
+def below_zero(operations: List[int]) -> bool:
+    """"""
+    Detects if at any point the balance of a bank account falls below zero.
+
+    Args:
+        operations (List[int]): A list of deposit and withdrawal operations.
+
+    Returns:
+        bool: True if the balance falls below zero at any point, False otherwise.
+
+    Examples:
+        >>> below_zero([1, -2, 3, -4])
+        False
+        >>> below_zero([5, 3, -2, 1])
+        True
+    """"""
+    balance = 0
+    for op in operations:
+        balance += op
+        if balance < 0:
+            return True
+    return False
+",N/A,2.9741338080002606,5.581252472386525e-05,2357.190463066101
