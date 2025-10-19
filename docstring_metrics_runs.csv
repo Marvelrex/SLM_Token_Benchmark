@@ -220,7 +220,7 @@ CODE ONLY. Use standard Python indentation. Thank you.
 Do not add explanations, notes, or text outside of the code.
 Return only the function code with its docstring, without markdown fences or extra text before or after.
 ",PASS
-quantized_nf4,Llama 3.2 3B NF4 Quantized (local),1,8.64E-05,6.861773182,2264.149117,"def below_zero(operations: List[int]) -> bool:
+quantized_nf4,Llama 3.2 3B NF4 Quantized,1,8.64E-05,6.861773182,2264.149117,"def below_zero(operations: List[int]) -> bool:
     """"""
     Detects if at any point the balance of account falls below zero.
 
@@ -263,7 +263,7 @@ CODE ONLY. Use standard Python indentation. Thank you.
 Do not add explanations, notes, or text outside of the code.
 Return only the function code with its docstring, without markdown fences or extra text before or after.
 ",PASS
-quantized_nf4,Llama 3.2 3B NF4 Quantized (local),2,8.62E-05,6.811149957,2264.149117,"from typing import List
+quantized_nf4,Llama 3.2 3B NF4 Quantized,2,8.62E-05,6.811149957,2264.149117,"from typing import List
 
 def below_zero(operations: List[int]) -> bool:
     """"""
@@ -307,7 +307,7 @@ CODE ONLY. Use standard Python indentation. Thank you.
 Do not add explanations, notes, or text outside of the code.
 Return only the function code with its docstring, without markdown fences or extra text before or after.
 ",PASS
-quantized_nf4,Llama 3.2 3B NF4 Quantized (local),3,7.51E-05,5.865831511,2264.149117,"def below_zero(operations: List[int]) -> bool:
+quantized_nf4,Llama 3.2 3B NF4 Quantized,3,7.51E-05,5.865831511,2264.149117,"def below_zero(operations: List[int]) -> bool:
     """"""
     Detects if at any point the balance of account falls below zero.
 
@@ -348,7 +348,7 @@ CODE ONLY. Use standard Python indentation. Thank you.
 Do not add explanations, notes, or text outside of the code.
 Return only the function code with its docstring, without markdown fences or extra text before or after.
 ",PASS
-quantized_nf4,Llama 3.2 3B NF4 Quantized (local),4,8.72E-05,6.814381685,2264.149117,"from typing import List
+quantized_nf4,Llama 3.2 3B NF4 Quantized,4,8.72E-05,6.814381685,2264.149117,"from typing import List
 
 def below_zero(operations: List[int]) -> bool:
     """"""
@@ -392,7 +392,7 @@ CODE ONLY. Use standard Python indentation. Thank you.
 Do not add explanations, notes, or text outside of the code.
 Return only the function code with its docstring, without markdown fences or extra text before or after.
 ",PASS
-quantized_nf4,Llama 3.2 3B NF4 Quantized (local),5,0.000185291,14.66185721,2264.149117,"def below_zero(operations: List[int]) -> bool:
+quantized_nf4,Llama 3.2 3B NF4 Quantized,5,0.000185291,14.66185721,2264.149117,"def below_zero(operations: List[int]) -> bool:
     """"""
     Detects if at any point the balance of a bank account falls below zero.
 
@@ -448,7 +448,7 @@ CODE ONLY. Use standard Python indentation. Thank you.
 Do not add explanations, notes, or text outside of the code.
 Return only the function code with its docstring, without markdown fences or extra text before or after.
 ",PASS
-pruned_ft,Llama 3.2 3B Pruned + Fine-Tuned (local),1,0.000120879,8.689968253,6127.936356,"```python
+pruned_ft,Fine-Tuned Llama 3.2 3B Pruned,1,0.000120879,8.689968253,6127.936356,"```python
 from typing import List
 
 def below_zero(operations: List[int]) -> bool:
@@ -514,7 +514,7 @@ CODE ONLY. Use standard Python indentation. Thank you.
 Do not add explanations, notes, or text outside of the code.
 Return only the function code with its docstring, without markdown fences or extra text before or after.
 ",PASS
-pruned_ft,Llama 3.2 3B Pruned + Fine-Tuned (local),2,0.000117409,8.325756931,6127.936356,"```python
+pruned_ft,Fine-Tuned Llama 3.2 3B Pruned,2,0.000117409,8.325756931,6127.936356,"```python
 from typing import List
 
 def below_zero(operations: List[int]) -> bool:
@@ -558,7 +558,7 @@ CODE ONLY. Use standard Python indentation. Thank you.
 Do not add explanations, notes, or text outside of the code.
 Return only the function code with its docstring, without markdown fences or extra text before or after.
 ",PASS
-pruned_ft,Llama 3.2 3B Pruned + Fine-Tuned (local),3,0.000116504,8.29585626,6127.936356,"```python
+pruned_ft,Fine-Tuned Llama 3.2 3B Pruned,3,0.000116504,8.29585626,6127.936356,"```python
 from typing import List
 
 def below_zero(operations: List[int]) -> bool:
@@ -602,7 +602,7 @@ CODE ONLY. Use standard Python indentation. Thank you.
 Do not add explanations, notes, or text outside of the code.
 Return only the function code with its docstring, without markdown fences or extra text before or after.
 ",PASS
-pruned_ft,Llama 3.2 3B Pruned + Fine-Tuned (local),4,0.000116242,8.24841106,6127.936356,"```python
+pruned_ft,Fine-Tuned Llama 3.2 3B Pruned,4,0.000116242,8.24841106,6127.936356,"```python
 from typing import List
 
 def below_zero(operations: List[int]) -> bool:
@@ -667,8 +667,8 @@ The docstring should not include any extra commentary, strictly limited to inclu
 CODE ONLY. Use standard Python indentation. Thank you.
 Do not add explanations, notes, or text outside of the code.
 Return only the function code with its docstring, without markdown fences or extra text before or after.
-",PASS
-pruned_ft,Llama 3.2 3B Pruned + Fine-Tuned (local),5,0.000117406,8.358834471,6127.936356,"```python
+",FALSE
+pruned_ft,Fine-Tuned Llama 3.2 3B Pruned,5,0.000117406,8.358834471,6127.936356,"```python
 from typing import List
 
 def below_zero(operations: List[int]) -> bool:
@@ -712,7 +712,7 @@ CODE ONLY. Use standard Python indentation. Thank you.
 Do not add explanations, notes, or text outside of the code.
 Return only the function code with its docstring, without markdown fences or extra text before or after.
 ",PASS
-distilled,Llama 3.2 1B Instruct,1,7.63E-05,4.046780036,2357.190463,"from typing import List
+distilled,Distilled Llama 3.2 1B Instruct,1,7.63E-05,4.046780036,2357.190463,"from typing import List
 
 def below_zero(operations: List[int]) -> bool:
     """"""
@@ -765,7 +765,7 @@ CODE ONLY. Use standard Python indentation. Thank you.
 Do not add explanations, notes, or text outside of the code.
 Return only the function code with its docstring, without markdown fences or extra text before or after.
 ",PASS
-distilled,Llama 3.2 1B Instruct,2,5.86E-05,3.175937001,2357.190463,"from typing import List
+distilled,Distilled Llama 3.2 1B Instruct,2,5.86E-05,3.175937001,2357.190463,"from typing import List
 
 def below_zero(operations: List[int]) -> bool:
     """"""
@@ -815,7 +815,7 @@ CODE ONLY. Use standard Python indentation. Thank you.
 Do not add explanations, notes, or text outside of the code.
 Return only the function code with its docstring, without markdown fences or extra text before or after.
 ",PASS
-distilled,Llama 3.2 1B Instruct,3,5.37E-05,2.850937693,2357.190463,"from typing import List
+distilled,Distilled Llama 3.2 1B Instruct,3,5.37E-05,2.850937693,2357.190463,"from typing import List
 
 def below_zero(operations: List[int]) -> bool:
     """"""
@@ -864,7 +864,7 @@ CODE ONLY. Use standard Python indentation. Thank you.
 Do not add explanations, notes, or text outside of the code.
 Return only the function code with its docstring, without markdown fences or extra text before or after.
 ",PASS
-distilled,Llama 3.2 1B Instruct,4,6.06E-05,3.223563961,2357.190463,"from typing import List
+distilled,Distilled Llama 3.2 1B Instruct,4,6.06E-05,3.223563961,2357.190463,"from typing import List
 
 def below_zero(operations: List[int]) -> bool:
     """"""
@@ -915,7 +915,7 @@ CODE ONLY. Use standard Python indentation. Thank you.
 Do not add explanations, notes, or text outside of the code.
 Return only the function code with its docstring, without markdown fences or extra text before or after.
 ",PASS
-distilled,Llama 3.2 1B Instruct,5,5.58E-05,2.974133808,2357.190463,"from typing import List
+distilled,Distilled Llama 3.2 1B Instruct,5,5.58E-05,2.974133808,2357.190463,"from typing import List
 
 def below_zero(operations: List[int]) -> bool:
     """"""
